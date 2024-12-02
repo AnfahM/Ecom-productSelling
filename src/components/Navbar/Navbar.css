@@ -1,0 +1,263 @@
+/* General navbar styling for both navbars */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  /* color: white; */
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Customer-specific navbar styling */
+.customer-navbar {
+  background-color: white; /* Different background for customer navbar */
+  color: #333;
+}
+
+.main-navbar {
+  padding: 0px 20px;
+}
+
+.logo a,
+.logo h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit; /* Will take the color of the navbar */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: inherit; /* Inherits the color of the navbar */
+  text-decoration: none;
+  font-size: 1rem;
+  padding-top: 8px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Open the menu when hamburger is clicked */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute; /* Position absolute to control placement */
+  top: 60px; /* Below the navbar */
+  right: 20px; /* Adjust right position */
+  width: 250px; /* Set width of the menu */
+  background-color: white; /* Background color for dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  padding: 10px; /* Padding for the dropdown */
+}
+
+/* Logout button styling */
+.logout-button {
+  background-color: #f44336; /* Red background color */
+  border: none; /* Remove default border */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Padding for the button */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure it's inline-block */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.logout-button-adminonly{
+  margin-right: 20px;
+}
+
+/* Hover effect for logout button */
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly scale the button */
+}
+
+/* Active/Clicked effect for logout button */
+.logout-button:active {
+  background-color: #c62828; /* Even darker red when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+  transform: scale(0.98); /* Slightly shrink when clicked */
+}
+
+/* Styling for the login button */
+.main-page-navbar-btn {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none; /* Remove default border */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-right: 30px;
+}
+
+/* Hover effect for the login button */
+.main-page-navbar-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Active/Clicked effect for the login button */
+.main-page-navbar-btn:active {
+  background-color: #004494; /* Even darker shade when clicked */
+  transform: translateY(0); /* Reset lift effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/* Responsive styling for both navbars */
+@media (max-width: 768px) {
+  /* .navbar {
+    align-items: flex-start;
+  } */
+
+  .nav-links {
+    display: none; /* Hide the links initially */
+  }
+
+  .nav-links.open {
+    display: flex; /* Shows the nav when open */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu in mobile */
+    margin-right: 30px;
+  }
+ 
+  .main-page-navbar-btn {
+    margin: 10%;
+    margin-right: 45px;
+  }
+
+  .nav-links a {
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-links {
+    gap: 10px;
+  }
+}
+
+/* Hover styling for standard navbar */
+.navbar .nav-links a:hover {
+  color: #ff0; /* Add hover color for standard navbar */
+}
+
+/* Hover styling for customer navbar */
+.customer-navbar .nav-links a:hover {
+  color: #007bff; /* Add hover color for customer navbar */
+}
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust logo size and alignment */
+.navbar .logo img {
+  width: 55px;  /* Adjust the width of the logo (you can change this to fit your design) */
+  height: auto;  /* Maintain aspect ratio */
+  object-fit: contain;  /* Ensure the image is contained within the box */
+  display: block;
+}
+.navbar .main-navbar-logo-handling img {
+  margin: 5px;  /* Remove any margin around the logo */
+}
+
+/* Make sure the logo link doesn't interfere with the logo image */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust logo container for responsive design */
+@media (max-width: 768px) {
+  .navbar .logo img {
+    width: 40px;  /* Adjust logo size for smaller screens */
+  }
+}

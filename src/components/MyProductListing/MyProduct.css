@@ -1,0 +1,243 @@
+/* Container for the entire product section */
+.my-products-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+/* Grid for displaying product cards */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Style for each product card */
+.product-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Ensuring all images have the same height */
+.product-card img {
+  width: 100%;  /* Set width to 100% of the parent container */
+  height: 150px;  /* Fixed height for all images */
+  object-fit: cover;  /* Maintain aspect ratio without distortion */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.product-actions {
+  margin-top: 15px;
+}
+
+.product-actions button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal overlay and modal content styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Modal header for close button */
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 34px;
+  color: rgba(196, 3, 3, 0.955);
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-close-btn:hover {
+  color: darkred; 
+}
+
+/* Modal footer actions */
+.modal-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.modal-actions button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-actions button:hover {
+  background-color: #218838;
+}
+
+/* Edit modal specific styles */
+.edit-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-modal-content label {
+  margin: 10px 0;
+}
+
+.edit-modal-content input,
+.edit-modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Image modal grid for displaying multiple images */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.image-card {
+  text-align: center;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100px;  /* Fixed height for images in the modal */
+  object-fit: cover;  /* Maintain aspect ratio without distortion */
+  border-radius: 5px;
+}
+
+.upload-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.upload-section input {
+  margin-bottom: 10px;
+}
+
+/* Delete confirmation modal */
+.delete-confirm-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.delete-confirm-modal h2 {
+  margin-bottom: 15px;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.delete-confirm-actions button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-confirm-actions .confirm-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-confirm-actions .cancel-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.delete-confirm-actions .confirm-btn:hover {
+  background-color: #c82333;
+}
+
+.delete-confirm-actions .cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .modal-content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .edit-modal-content input,
+  .edit-modal-content textarea {
+    padding: 8px;
+  }
+}

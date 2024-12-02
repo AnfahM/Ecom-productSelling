@@ -1,0 +1,97 @@
+/* Layout container for the product details */
+.product-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-top: 80px;
+  justify-content: center;
+}
+
+/* For the carousel container */
+.carousel-container {
+  flex: 1;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+/* For the product information section */
+.product-info {
+  flex: 1;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  margin-bottom: 10px;
+}
+
+/* Styling for the price and contact details */
+.product-info p {
+  margin: 10px 0;
+}
+
+/* "More Details" section */
+.more-details-section {
+  margin-top: 10px;
+}
+
+.more-details-section h4 {
+  margin-bottom: 10px;
+}
+
+/* Box style for the extended details */
+.more-details-box {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.more-details-box p {
+  margin: 0;
+  color: #333;
+}
+
+/* Make carousel images uniform and responsive */
+.carousel-container img {
+  width: 100%; /* Ensures the image fills the container width */
+  max-height: 400px; /* Limit the height for consistency */
+  object-fit: contain; /* Ensures the image is fully visible without being cropped */
+  object-position: center; /* Centers the image */
+}
+
+/* Mobile view (Less than 768px) */
+@media (max-width: 768px) {
+  .carousel-container, .product-info {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .product-details-container {
+    flex-direction: column;
+  }
+}
+
+/* Tablet view (Between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-details-container {
+    flex-direction: row; /* Ensure the carousel and product details are in the same row */
+    justify-content: space-between;
+  }
+
+  .carousel-container, .product-info {
+    max-width: 50%; /* Ensure they both take up equal space in row layout */
+    padding: 0 10px; /* Adjust padding for proper spacing */
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1200px) {
+  .carousel-container img {
+    max-height: 500px; /* Adjust for larger screens */
+  }
+}

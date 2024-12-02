@@ -1,0 +1,222 @@
+/* Container for the product list and search bar */
+.product-list-container {
+  padding: 20px;
+  margin-top: 80px;
+}
+.product a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Ensure the text color remains the same */
+  text-align: left;
+}
+
+
+/* Product price */
+.product b {
+  font-size: 1rem;
+  color: green; /* Change the price color to green */
+  margin-bottom: 10px; /* Add some margin below the price */
+  margin-left: 10px;
+}
+
+/* Search bar styling */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Flex container for the product list */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Reduced margin for better alignment */
+  justify-content: center;
+  gap: 15px; /* Adds a small gap between items */
+}
+
+/* Individual product card */
+.product {
+  background-color: #f9f9f9; /* Off-white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  overflow: hidden; /* Prevents overflow for rounded corners */
+  transition: transform 0.2s ease; /* Smooth scaling on hover */
+}
+
+/* Image styling */
+.product img {
+  width: 100%; /* Make the image take the full width of the container */
+  height: 200px; /* Set a standard height for images */
+  object-fit: cover; /* This ensures the image doesn't get distorted */
+  border-radius: 0; /* Remove border-radius for the image */
+}
+
+/* Adjust the image height for larger screens (Tablet view) */
+@media (min-width: 769px) {
+  .product img {
+    height: 180px; /* Increase the height slightly for tablet screens */
+  }
+}
+
+/* Adjust the image height for even larger screens (Desktop view) */
+@media (min-width: 1200px) {
+  .product img {
+    height: 200px; /* Further increase the height for larger screens */
+  }
+}
+
+/* Product name */
+.product h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 0 10px;
+  color: #333;
+
+}
+
+
+
+/* Hover effect for scaling */
+.product:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+
+/* Mobile view: Show 2 cards per row */
+@media (max-width: 768px) {
+  .product {
+    width: calc(100% / 2 - 15px); /* 2 cards per row on smaller screens */
+  }
+}
+
+/* Tablet view: Show 4 or 5 cards per row */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product {
+    width: calc(100% / 4 - 15px); /* 4 cards per row on medium screens */
+  }
+}
+
+/* Larger tablet or small desktop: Show 5 cards per row */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .product {
+    width: calc(100% / 5 - 15px); /* 5 cards per row on larger tablets or small desktops */
+  }
+}
+
+/* System view: Show 6, 7, or 8 cards per row based on screen size */
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .product {
+    width: calc(100% / 6 - 15px); /* 6 cards per row on medium-large screens */
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .product {
+    width: calc(100% / 7 - 15px); /* 7 cards per row on larger screens */
+  }
+}
+
+@media (min-width: 1601px) {
+  .product {
+    width: calc(100% / 8 - 15px); /* 8 cards per row on extra-large screens */
+  }
+}
+
+/* Style for the container, input, and dropdown */
+.product-list-container {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+/* Search bar styling */
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.category-dropdown {
+  padding: 10px;
+  width: 100%;
+  max-width: 120px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus,
+.category-dropdown:focus {
+  border-color: #0073e6; /* Change color on focus */
+  outline: none;
+}
+
+.category-dropdown {
+  background-color: #f9f9f9;
+  appearance: none; /* Removes default dropdown arrow for custom styling */
+  color: #333;
+}
+
+.category-dropdown option {
+  padding: 10px;
+  color: #333;
+}
+
+/* Custom dropdown arrow styling */
+.category-dropdown::after {
+  content: "▼"; /* Custom arrow symbol */
+  font-size: 0.8rem;
+  color: #333;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  pointer-events: none; /* Make sure arrow does not capture clicks */
+}
+
+/* Hover and active states for improved UX */
+.category-dropdown:hover {
+  border-color: #0073e6;
+}
+
+@media (min-width: 769px) {
+  .search-bar {
+    flex-direction: row;
+  }
+}
+
+/* Location button styling */
+.location-button {
+  padding: 10px 15px;
+  background-color: #f5f6f8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  width: auto; /* Ensures button size remains flexible */
+}
+
+/* Remove hover and focus effects */
+.location-button:hover,
+.location-button:focus,
+.location-button:active {
+  background-color: #cae0f5; /* Keeps the button color static */
+  outline: none; /* Removes focus outline */
+}
